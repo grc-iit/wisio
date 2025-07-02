@@ -27,12 +27,12 @@ RUN apt-get update && \
     python3-pip && \
     rm -rf /var/lib/apt/lists/*
 
-COPY . /wisio
 WORKDIR /wisio
 
+COPY . .
+
 RUN pip install --upgrade pip && \
-    pip install build meson-python setuptools wheel && \
-    pip install .[darshan,dftracer] -Csetup-args="-Denable_tools=true" && \
-    pip install -r tests/requirements.txt
+    pip install build meson-python setuptools streamlit wheel && \
+    pip install .[darshan,dftracer] -Csetup-args="-Denable_tools=true"
 
 ENTRYPOINT ["wisio"]
