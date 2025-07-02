@@ -1,4 +1,0 @@
-build-essential
-cmake
-zlib1g-dev
-python3-dev

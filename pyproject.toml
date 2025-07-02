@@ -40,11 +40,11 @@ dependencies = [
     "scikit-learn~=1.3.0",
     "scipy~=1.10.0",
     "venn==0.1.3",
-    "zindex_py==0.0.5",
 ]
 
 [project.optional-dependencies]
 darshan = ["darshan>=3.4"]
+dftracer = ["zindex_py==0.0.5"]
 
 [project.scripts]
 wisio = "wisio.__main__:main"
