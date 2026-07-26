@@ -1094,7 +1094,11 @@ int main(int argc, char **argv)
     {
         if (fs::is_directory(entry))
         {
-            std::string dir_string{entry.path().u8string()};
+            // `u8string()` returns std::u8string under C++20, which no longer
+            // converts to std::string. `string()` returns the native encoding
+            // under both standards, and this is only used to split off the
+            // trailing path component.
+            std::string dir_string{entry.path().string()};
             const size_t last_slash_idx = dir_string.rfind('/');
             std::string directory_name;
             if (std::string::npos != last_slash_idx)
