@@ -42,7 +42,7 @@ python -m pip install --upgrade pip meson-python setuptools wheel
 # 3. Install WisIO from the root of this repository:
 #    The following command includes optional C++ components (tests and tools).
 #    The --prefix argument is optional and specifies the installation location.
-pip install .[darshan,dftracer] \
+pip install .[darshan,dftracer,web] \
   -Csetup-args="--prefix=$HOME/.local" \
   -Csetup-args="-Denable_tests=true" \
   -Csetup-args="-Denable_tools=true"
