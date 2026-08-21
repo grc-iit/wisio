@@ -34,7 +34,7 @@ jobs:
     env:
       OMPI_ALLOW_RUN_AS_ROOT: 1
       OMPI_ALLOW_RUN_AS_ROOT_CONFIRM: 1
-      ARROW_VERSION: 25.0.0-1
+      ARROW_VERSION: 25.0.1-1
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
