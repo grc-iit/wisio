@@ -137,7 +137,7 @@ Features:
 - **Drag-and-drop trace upload** (max 20 MB per upload, auto-detects Darshan/DFTracer/Recorder format)
 - **Interactive bottleneck exploration** with severity-badged findings (Critical → Trivial)
 - **Altair visualizations** of I/O characteristics and operation distributions
-- **Runs on Streamlit Community Cloud** — try the live instance at <https://wisio-web.streamlit.app/> or deploy your own from the repo
+- **Runs on Streamlit Community Cloud** — try the [live instance](https://wisio-web.streamlit.app/); the repo includes deployment-ready configuration
 
 The web app uses the same analysis engine and rule set as the CLI, so results are consistent.
 
