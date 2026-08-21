@@ -18,12 +18,14 @@ WisIO (Wisdom from I/O Behavior) is an open-source tool designed to efficiently 
 To install WisIO through `pip` (recommended for most users):
 
 ```bash
-# Ensure runtime dependencies for optional features (e.g., Darshan, Recorder) are installed.
+# Ensure runtime dependencies for optional features (e.g., Darshan, DFTracer) are installed.
 # This might involve using your system's package manager or a tool like Spack.
 # Example using Spack to prepare the environment:
 # spack -e tools install
 pip install wisio[darshan,dftracer]
 ```
+
+**Note:** On Python 3.13 the `darshan` extra is a no-op (pydarshan does not yet ship a CPython 3.13 wheel). The core WisIO package and `dftracer`/`web` extras work on 3.13+.
 
 To install WisIO from source (for developers or custom builds):
 
@@ -40,7 +42,7 @@ python -m pip install --upgrade pip meson-python setuptools wheel
 # 3. Install WisIO from the root of this repository:
 #    The following command includes optional C++ components (tests and tools).
 #    The --prefix argument is optional and specifies the installation location.
-pip install .[darshan,dftracer] \
+pip install .[darshan,dftracer,web] \
   -Csetup-args="--prefix=$HOME/.local" \
   -Csetup-args="-Denable_tests=true" \
   -Csetup-args="-Denable_tools=true"
@@ -116,6 +118,28 @@ WisIO also identifies potential I/O bottlenecks. Here is a snippet of the "I/O B
 │                                                                                                   │
 ╰───────────────────────────────────────────────────────────────────────────────────────────────────╯
 ```
+
+**Output artifacts:** The console output also saves `result.html`, `result.txt`, and `result.svg` in the Hydra run directory for sharing and archiving.
+
+## WisIO Web App
+
+WisIO includes a browser-based interface ("WisIO Web") for interactive analysis:
+
+```bash
+# Install the web extra (Streamlit + Altair)
+pip install wisio[web]
+
+# Launch the app
+streamlit run streamlit_app.py
+```
+
+Features:
+- **Drag-and-drop trace upload** (max 20 MB per upload, auto-detects Darshan/DFTracer/Recorder format)
+- **Interactive bottleneck exploration** with severity-badged findings (Critical → Trivial)
+- **Altair visualizations** of I/O characteristics and operation distributions
+- **Runs on Streamlit Community Cloud** — try the [live instance](https://wisio-web.streamlit.app/); the repo includes deployment-ready configuration
+
+The web app uses the same analysis engine and rule set as the CLI, so results are consistent.
 
 ## Further Information
 
