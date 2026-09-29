@@ -21,7 +21,7 @@ WisIO (Wisdom from I/O Behavior) is an open-source tool designed to efficiently 
 > Salt Lake City, UT, USA, June 8–11, 2025.
 > DOI: [10.1145/3721145.3725742](https://doi.org/10.1145/3721145.3725742).
 
-Use [`CITATION.cff`](CITATION.cff) to cite this work.
+Use [`CITATION.cff`](https://github.com/grc-iit/wisio/blob/main/CITATION.cff) to cite this work.
 
 ## Installation
 
@@ -157,8 +157,8 @@ For more details, to report issues, or to contribute to WisIO, please refer to t
 
 *   **[Official WisIO Documentation](https://grc.iit.edu/docs/category/wisio/)**: For detailed usage, configuration options, and information about analyzers.
 *   **[Issue Tracker](https://github.com/grc-iit/wisio/issues)**: To report bugs or suggest new features.
-*   **[Contributing Guidelines](./CONTRIBUTING.md)**: For information on how to contribute to the project, including setting up a development environment and coding standards.
-*   **[Citation File](./CITATION.cff)**: If you use WisIO in your research, please cite it using the information in this file.
+*   **[Contributing Guidelines](https://github.com/grc-iit/wisio/blob/main/CONTRIBUTING.md)**: For information on how to contribute to the project, including setting up a development environment and coding standards.
+*   **[Citation File](https://github.com/grc-iit/wisio/blob/main/CITATION.cff)**: If you use WisIO in your research, please cite it using the information in this file.
 
 ## Acknowledgments
 
