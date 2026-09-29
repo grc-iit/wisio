@@ -17,7 +17,7 @@ jobs:
     name: ${{ matrix.python }}-${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     env:
-      ARROW_VERSION: 25.0.0-1
+      ARROW_VERSION: 25.0.1-1
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5

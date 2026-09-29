@@ -101,5 +101,5 @@ for analyzer, trace_name, trace_path in traces:
 # bert (4 node - 8 GPUs per node = 32 processes)
 # 1000 steps
 # every step reads 48 images/samples of 2500 bytes each
-# https://github.com/hariharan-devarajan/iopp/blob/system/corona/apps/dlio/script.sh
+# https://github.com/llnl-asr/iopp/blob/system/corona/apps/dlio/script.sh
 # do `prefetch_size` of 4GB
