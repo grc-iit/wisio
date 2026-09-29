@@ -64,9 +64,11 @@ web = ["altair>=5.0", "streamlit>=1.40"]
 wisio = "wisio.__main__:main"
 
 [project.urls]
-documentation = "https://grc.iit.edu/docs/category/wisio/"
-source = "https://github.com/grc-iit/wisio"
-tracker = "https://github.com/grc-iit/wisio/issues"
+Homepage = "https://grc.iit.edu/docs/category/wisio/"
+Documentation = "https://grc.iit.edu/docs/category/wisio/"
+Repository = "https://github.com/grc-iit/wisio"
+Issues = "https://github.com/grc-iit/wisio/issues"
+Changelog = "https://github.com/grc-iit/wisio/releases"
 
 [tool.meson-python.args]
 install = ["--skip-subprojects"]
