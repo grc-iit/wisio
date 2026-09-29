@@ -69,6 +69,11 @@ jobs:
     runs-on: ubuntu-22.04
     needs:
       - release-build
+    environment:
+      name: pypi
+      url: https://pypi.org/p/wisio
+    permissions:
+      id-token: write
     steps:
       - name: Retrieve release distributions
         uses: actions/download-artifact@v4
@@ -78,6 +83,3 @@ jobs:
           merge-multiple: true
       - name: Publish release distributions to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
-        with:
-          user: __token__
-          password: ${{ secrets.PYPI_TOKEN }}
