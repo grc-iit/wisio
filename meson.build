@@ -1,7 +1,7 @@
 project(
     'wisio',
     ['c', 'cpp'],
-    version: '0.2.0',
+    version: '0.2.1',
     # Arrow's public headers use std::span, std::popcount and std::bit_width,
     # so c++20 is the floor for anything linking against libarrow (tools/).
     default_options: ['buildtype=debugoptimized', 'cpp_std=c++20', 'warning_level=3'],
