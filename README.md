@@ -13,6 +13,16 @@
 
 WisIO (Wisdom from I/O Behavior) is an open-source tool designed to efficiently analyze multi-terabyte-scale workflow performance data over distributed resources. It provides a comprehensive analysis of I/O performance, identifying bottlenecks and potential root causes through advanced rule-based analysis. With its extensible design, WisIO can be tailored to various use cases, providing actionable insights for improving application performance and resource utilization. By leveraging parallel computing and multi-perspective views, WisIO enables rapid detection of complex I/O issues, making it an invaluable asset for HPC professionals and researchers.
 
+## Paper
+
+> Izzet Yildirim, Hariharan Devarajan, Anthony Kougkas, Xian-He Sun, Kathryn Mohror.
+> **WisIO: Automated I/O Bottleneck Detection with Multi-Perspective Views for HPC Workflows.**
+> In *Proceedings of the 2025 ACM International Conference on Supercomputing (ICS'25)*,
+> Salt Lake City, UT, USA, June 8–11, 2025.
+> DOI: [10.1145/3721145.3725742](https://doi.org/10.1145/3721145.3725742).
+
+Use [`CITATION.cff`](CITATION.cff) to cite this work.
+
 ## Installation
 
 To install WisIO through `pip` (recommended for most users):
