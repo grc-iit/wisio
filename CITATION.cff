@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite the software and the paper."
 title: "WisIO: Automated I/O Bottleneck Detection with Multi-Perspective Views for HPC Workflows"
-version: 0.2.1
+version: 0.2.2
 abstract: "Analyze, visualize, and understand I/O performance issues in HPC workflows."
 license: MIT
 url: https://github.com/grc-iit/wisio
