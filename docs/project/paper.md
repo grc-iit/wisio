@@ -70,7 +70,7 @@ file, which GitHub renders as a **Cite this repository** button:
   title   = {{WisIO}: Workflow I/O Analysis Tool},
   author  = {Yildirim, Izzet and Devarajan, Hariharan and Kougkas, Anthony
              and Sun, Xian-He and Mohror, Kathryn},
-  version = {0.2.2},
+  version = {0.2.3},
   url     = {https://github.com/grc-iit/wisio},
   license = {MIT}
 }

@@ -13,7 +13,7 @@ and the package always report the same version.
 
 - `latest` tracks `main`.
 - Release tags are built as separate Read the Docs versions.
-- Patch releases (for example `0.2.2`) are documentation-compatible; minor
+- Patch releases (for example `0.2.3`) are documentation-compatible; minor
   releases may add or change configuration keys.
 
 ```{note}
