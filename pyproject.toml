@@ -57,7 +57,10 @@ dependencies = [
 # wheel. WisIO still degrades at runtime if the extra is simply absent -- see
 # the optional-import guard in wisio/__init__.py.
 darshan = ["darshan>=3.4; python_version < '3.13'"]
-dftracer = ["dftracer-utils>=0.0.12"]
+# dftracer-utils 0.0.13 replaced the TraceReader API with the
+# TraceViewer/LazyFrame API, which wisio.dftracer does not use yet. Pin to the
+# last release that still exposes TraceReader until the reader is ported.
+dftracer = ["dftracer-utils>=0.0.12,<0.0.13"]
 web = ["altair>=5.0", "streamlit>=1.40"]
 
 [project.scripts]
