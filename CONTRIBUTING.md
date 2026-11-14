@@ -113,4 +113,17 @@ The repository includes a [dev container](.devcontainer.json) (built from the [D
     ```
     The editable pip install should handle most build aspects, but manual recompilation with Meson might be needed for iterative C++ development.
 
+## Documentation
+
+The user-facing documentation lives in `docs/` and is published at <https://wisio.readthedocs.io/>. It is built with Sphinx, the Read the Docs theme, and MyST Markdown, independently of the WisIO runtime:
+
+```bash
+python -m venv venv-docs
+source venv-docs/bin/activate        # Windows: venv-docs\Scripts\Activate.ps1
+pip install -r docs/requirements.txt
+sphinx-build -b html -W --keep-going docs docs/_build/html
+```
+
+Open `docs/_build/html/index.html` or run `python -m http.server -d docs/_build/html 8000`. See `docs/README.md` for the site layout, branding, and Read the Docs setup. Documentation changes must build without warnings, and any change to configuration defaults, rules, or output artifacts should update the matching page in the same pull request.
+
 We look forward to your contributions!

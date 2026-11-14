@@ -67,8 +67,8 @@ web = ["altair>=5.0", "streamlit>=1.40"]
 wisio = "wisio.__main__:main"
 
 [project.urls]
-Homepage = "https://grc.iit.edu/docs/category/wisio/"
-Documentation = "https://grc.iit.edu/docs/category/wisio/"
+Homepage = "https://github.com/grc-iit/wisio"
+Documentation = "https://wisio.readthedocs.io/"
 Repository = "https://github.com/grc-iit/wisio"
 Issues = "https://github.com/grc-iit/wisio/issues"
 Changelog = "https://github.com/grc-iit/wisio/releases"

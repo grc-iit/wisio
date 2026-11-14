@@ -18,3 +18,4 @@ multirun/
 outputs/
 tmp
 venv-*
+docs/_build/

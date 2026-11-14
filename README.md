@@ -5,6 +5,7 @@
 # WisIO: Workflow I/O Analysis Tool
 
 ![Build and Test](https://github.com/grc-iit/wisio/actions/workflows/ci.yml/badge.svg)
+[![Documentation](https://readthedocs.org/projects/wisio/badge/?version=latest)](https://wisio.readthedocs.io/en/latest/)
 ![PyPI - Version](https://img.shields.io/pypi/v/wisio?label=PyPI)
 ![PyPI - Wheel](https://img.shields.io/pypi/wheel/wisio?label=Wheel)
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/wisio?label=Python)
@@ -155,7 +156,7 @@ The web app uses the same analysis engine and rule set as the CLI, so results ar
 
 For more details, to report issues, or to contribute to WisIO, please refer to the following resources:
 
-*   **[Official WisIO Documentation](https://grc.iit.edu/docs/category/wisio/)**: For detailed usage, configuration options, and information about analyzers.
+*   **[Official WisIO Documentation](https://wisio.readthedocs.io/)**: For detailed usage, configuration options, and information about analyzers.
 *   **[Issue Tracker](https://github.com/grc-iit/wisio/issues)**: To report bugs or suggest new features.
 *   **[Contributing Guidelines](https://github.com/grc-iit/wisio/blob/main/CONTRIBUTING.md)**: For information on how to contribute to the project, including setting up a development environment and coding standards.
 *   **[Citation File](https://github.com/grc-iit/wisio/blob/main/CITATION.cff)**: If you use WisIO in your research, please cite it using the information in this file.

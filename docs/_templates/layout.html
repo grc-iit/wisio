@@ -1,0 +1,15 @@
+{% extends "!layout.html" %}
+
+{#
+  The index page is titled "WisIO Documentation", which is also the site title
+  (html_title). Sphinx's default template appends the site title to every page,
+  so the home page would read "WisIO Documentation — WisIO Documentation".
+  Only add the suffix when the page title is different from the site title.
+#}
+{% block htmltitle %}
+  {%- if title == docstitle -%}
+    <title>{{ title|striptags|e }}</title>
+  {%- else -%}
+    {{ super() }}
+  {%- endif -%}
+{% endblock %}

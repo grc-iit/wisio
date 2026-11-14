@@ -1,0 +1,172 @@
+/* WisIO brand overrides for the Read the Docs theme.
+ *
+ * sphinx_rtd_theme does not expose a primary-colour option, so the accent
+ * colour is applied here on top of the compiled theme. The brand red is
+ * #d31f30, sampled from assets/logo.png. Hover/darker variants keep links
+ * readable while preserving the brand.
+ */
+
+:root {
+  --wisio-red: #d31f30;
+  --wisio-red-dark: #a8182a;
+  --wisio-red-darker: #8a1423;
+  --wisio-red-tint: #fdf2f3;
+  --wisio-ink: #333333;
+}
+
+/* Links ------------------------------------------------------------------ */
+
+/* Keep the brand colour inside the content area. Sidebar links are handled
+ * separately below so visiting a page does not change their colour against
+ * the dark navigation rail. */
+.rst-content a {
+  color: var(--wisio-red);
+}
+
+.rst-content a:visited {
+  color: var(--wisio-red-dark);
+}
+
+.rst-content a:hover {
+  color: var(--wisio-red-darker);
+}
+
+/* Inline code stays legible on white while keeping a warm red accent. */
+.rst-content code.literal,
+.rst-content tt.literal {
+  color: var(--wisio-red-darker);
+}
+
+.rst-content a code,
+.rst-content a tt {
+  color: var(--wisio-red);
+}
+
+/* Sidebar ----------------------------------------------------------------- */
+
+/* The search header background is also set through
+ * html_theme_options["style_nav_header_background"]; keeping it here makes the
+ * brand consistent if that option is ever changed. */
+.wy-side-nav-search,
+.wy-nav-top {
+  background-color: var(--wisio-red);
+}
+
+.wy-side-nav-search input[type="text"] {
+  border-color: var(--wisio-red-darker);
+}
+
+.wy-nav-top img {
+  background-color: transparent;
+}
+
+/* White wordmark on the red header. */
+.wy-side-nav-search > a img.logo {
+  max-width: 88%;
+}
+
+/* Home-page hero logo: give it room before the tags and body copy. */
+.wisio-hero-logo {
+  display: block;
+  margin: 0.25em auto 1.4em auto;
+}
+
+/* Section captions ("Getting started", "User guide", ...). The standard
+ * brand red has too little contrast on the dark rail, so captions use a
+ * lighter tint of it. */
+.wy-menu-vertical header,
+.wy-menu-vertical p.caption,
+.wy-nav .wy-menu-vertical header {
+  color: #ff8a94;
+}
+
+/* Visited sidebar links keep the unvisited colour; dark red on the dark rail
+ * is hard to read. Hover and active states stay white on the red accent. */
+.wy-nav-side a:link,
+.wy-nav-side a:visited {
+  color: #e6e6e6;
+}
+
+.wy-nav-side a:hover,
+.wy-nav-side a:active {
+  color: #ffffff;
+}
+
+/* Active and hovered navigation entries. */
+.wy-menu-vertical a:active,
+.wy-nav .wy-menu-vertical a:hover {
+  background-color: var(--wisio-red);
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.wy-menu-vertical li.current > a,
+.wy-menu-vertical li.on a {
+  box-shadow: inset 3px 0 0 var(--wisio-red);
+}
+
+/* Content ---------------------------------------------------------------- */
+
+.rst-content h1,
+.rst-content h2 {
+  color: var(--wisio-ink);
+}
+
+.rst-content h1 {
+  border-bottom: 3px solid var(--wisio-red);
+  padding-bottom: 0.35em;
+}
+
+/* Table headers get a light brand tint; the theme's borders stay untouched. */
+.rst-content table.docutils thead th,
+.rst-content table.docutils th {
+  background-color: var(--wisio-red-tint);
+}
+
+/* Admonitions and API signatures, if autodoc is added later. */
+.rst-content .admonition-title {
+  background-color: var(--wisio-red);
+}
+
+.rst-content dl dt {
+  border-top-color: var(--wisio-red);
+}
+
+/* Read the Docs version badge (bottom-left flyout). */
+.rst-versions .rst-current-version {
+  background-color: var(--wisio-red-darker);
+}
+
+/* sphinx-design cards on the landing page. */
+.sd-card {
+  border-top: 3px solid var(--wisio-red);
+}
+
+/* Mermaid -----------------------------------------------------------------
+ * sphinxcontrib-mermaid 2.x pins rendered diagrams to a 500px-high box, which
+ * leaves a wide horizontal flowchart tiny in the middle of a tall empty area.
+ * Let the SVG keep its aspect ratio and use the content width instead. */
+.mermaid-container > pre > svg,
+pre.mermaid > svg {
+  /* The extension pins the SVG to a 500px-high box. Keep its aspect ratio and
+   * let it use the content width; this is what makes horizontal flows legible. */
+  height: auto !important;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.mermaid-container > pre,
+pre.mermaid {
+  display: block;
+  text-align: center;
+  padding: 0.5em 0;
+}
+
+/* Tables ------------------------------------------------------------------
+ * The Read the Docs theme prevents table cells from wrapping, which makes the
+ * configuration reference scroll horizontally. Wrap long descriptions so the
+ * tables fit the content column. */
+.wy-table-responsive table td,
+.wy-table-responsive table th {
+  white-space: normal;
+}
