@@ -5,7 +5,7 @@
 # WisIO: Workflow I/O Analysis Tool
 
 ![Build and Test](https://github.com/grc-iit/wisio/actions/workflows/ci.yml/badge.svg)
-[![Documentation](https://readthedocs.org/projects/wisio/badge/?version=latest)](https://wisio.readthedocs.io/en/latest/)
+[![Docs](https://img.shields.io/readthedocs/wisio?label=Docs)](https://wisio.readthedocs.io/en/latest/)
 ![PyPI - Version](https://img.shields.io/pypi/v/wisio?label=PyPI)
 ![PyPI - Wheel](https://img.shields.io/pypi/wheel/wisio?label=Wheel)
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/wisio?label=Python)
