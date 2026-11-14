@@ -1,0 +1,169 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" role="img" aria-labelledby="wisio-arch-title wisio-arch-desc">
+  <title id="wisio-arch-title">WisIO system architecture</title>
+  <desc id="wisio-arch-desc">Darshan, DFTracer, and Recorder traces are read into a normalized record schema, aggregated into a main view, expanded into time, file, and process perspectives, and scored. Bottleneck rules and I/O characteristics then produce a console report and an interactive layer available through Jupyter notebooks and WisIO Web.</desc>
+
+  <defs>
+    <marker id="wisio-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#8a8a8a"/>
+    </marker>
+    <marker id="wisio-arrow-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#a8182a"/>
+    </marker>
+    <style>
+      .title {
+        font: 700 19px "Lato", "Helvetica Neue", Arial, sans-serif;
+        fill: #333333;
+      }
+      .label {
+        font: 600 16px "Lato", "Helvetica Neue", Arial, sans-serif;
+        fill: #333333;
+      }
+      .body {
+        font: 14px "Lato", "Helvetica Neue", Arial, sans-serif;
+        fill: #555555;
+      }
+      .caption {
+        font: 700 12px "Lato", "Helvetica Neue", Arial, sans-serif;
+        fill: #8a8a8a;
+        letter-spacing: 1.4px;
+      }
+      .chip {
+        font: 13px "Lato", "Helvetica Neue", Arial, sans-serif;
+        fill: #555555;
+      }
+      .source {
+        fill: #fdf2f3;
+        stroke: #d31f30;
+        stroke-width: 1.6;
+      }
+      .core {
+        fill: #ffffff;
+        stroke: #d31f30;
+        stroke-width: 2;
+      }
+      .output {
+        fill: #fdf2f3;
+        stroke: #a8182a;
+        stroke-width: 1.6;
+      }
+      .group {
+        fill: #fafafa;
+        stroke: #e1e4e5;
+        stroke-width: 1.2;
+      }
+      .chipbox {
+        fill: #f4f5f6;
+        stroke: #e1e4e5;
+        stroke-width: 1;
+      }
+      .line {
+        fill: none;
+        stroke: #8a8a8a;
+        stroke-width: 1.6;
+      }
+      .arrow {
+        fill: none;
+        stroke: #8a8a8a;
+        stroke-width: 1.6;
+        marker-end: url(#wisio-arrow);
+      }
+      .dashed {
+        fill: none;
+        stroke: #a8182a;
+        stroke-width: 1.6;
+        stroke-dasharray: 5 4;
+        marker-end: url(#wisio-arrow-red);
+      }
+    </style>
+  </defs>
+
+  <!-- Trace sources -->
+  <rect x="20" y="40" width="190" height="112" rx="10" class="source"/>
+  <text x="34" y="66" class="title">I/O traces</text>
+  <rect x="34" y="76" width="162" height="20" rx="10" class="chipbox"/>
+  <text x="44" y="90" class="chip">Darshan DXT</text>
+  <rect x="34" y="100" width="162" height="20" rx="10" class="chipbox"/>
+  <text x="44" y="114" class="chip">DFTracer .pfw</text>
+  <rect x="34" y="124" width="162" height="20" rx="10" class="chipbox"/>
+  <text x="44" y="138" class="chip">Recorder Parquet</text>
+
+  <line x1="210" y1="96" x2="244" y2="96" class="arrow"/>
+
+  <!-- Reader -->
+  <rect x="250" y="60" width="170" height="72" rx="10" class="core"/>
+  <text x="335" y="92" text-anchor="middle" class="label">Format-specific</text>
+  <text x="335" y="111" text-anchor="middle" class="label">reader</text>
+
+  <line x1="420" y1="96" x2="454" y2="96" class="arrow"/>
+
+  <!-- Normalized records -->
+  <rect x="460" y="32" width="420" height="128" rx="10" class="source"/>
+  <text x="474" y="58" class="title">Normalized records</text>
+  <text x="474" y="76" class="body">one schema for every trace format</text>
+  <rect x="474" y="88" width="54" height="20" rx="10" class="chipbox"/>
+  <text x="484" y="102" class="chip">time</text>
+  <rect x="536" y="88" width="54" height="20" rx="10" class="chipbox"/>
+  <text x="546" y="102" class="chip">size</text>
+  <rect x="598" y="88" width="62" height="20" rx="10" class="chipbox"/>
+  <text x="608" y="102" class="chip">count</text>
+  <rect x="668" y="88" width="50" height="20" rx="10" class="chipbox"/>
+  <text x="678" y="102" class="chip">file</text>
+  <rect x="474" y="114" width="78" height="20" rx="10" class="chipbox"/>
+  <text x="484" y="128" class="chip">process</text>
+  <rect x="560" y="114" width="64" height="20" rx="10" class="chipbox"/>
+  <text x="570" y="128" class="chip">io_cat</text>
+  <rect x="632" y="114" width="76" height="20" rx="10" class="chipbox"/>
+  <text x="642" y="128" class="chip">duration</text>
+
+  <!-- Records into the Dask pipeline -->
+  <path d="M 670 160 V 174 H 235 V 214" class="arrow"/>
+
+  <!-- Dask analysis container -->
+  <rect x="120" y="185" width="660" height="120" rx="12" class="group"/>
+  <text x="136" y="207" class="caption">DASK ANALYSIS</text>
+
+  <rect x="145" y="220" width="180" height="62" rx="8" class="core"/>
+  <text x="235" y="245" text-anchor="middle" class="label">Aggregate</text>
+  <text x="235" y="264" text-anchor="middle" class="body">main view</text>
+
+  <line x1="325" y1="251" x2="354" y2="251" class="arrow"/>
+
+  <rect x="360" y="220" width="200" height="62" rx="8" class="core"/>
+  <text x="460" y="245" text-anchor="middle" class="label">Build perspectives</text>
+  <text x="460" y="264" text-anchor="middle" class="body">time × file × process</text>
+
+  <line x1="560" y1="251" x2="594" y2="251" class="arrow"/>
+
+  <rect x="600" y="220" width="160" height="62" rx="8" class="core"/>
+  <text x="680" y="245" text-anchor="middle" class="label">Score</text>
+  <text x="680" y="264" text-anchor="middle" class="body">iops / time</text>
+
+  <!-- Score branches into rules and characteristics -->
+  <path d="M 680 282 V 305" class="line"/>
+  <path d="M 345 305 H 680" class="line"/>
+  <path d="M 345 305 V 319" class="arrow"/>
+  <path d="M 570 305 V 319" class="arrow"/>
+
+  <rect x="250" y="325" width="190" height="70" rx="8" class="core"/>
+  <text x="345" y="352" text-anchor="middle" class="label">Bottleneck rules</text>
+  <text x="345" y="372" text-anchor="middle" class="body">6 rules + reasons</text>
+
+  <rect x="470" y="325" width="200" height="70" rx="8" class="core"/>
+  <text x="570" y="352" text-anchor="middle" class="label">I/O characteristics</text>
+  <text x="570" y="372" text-anchor="middle" class="body">12 workload summaries</text>
+
+  <!-- Rules and characteristics into the report -->
+  <path d="M 345 395 V 414 H 460" class="line"/>
+  <path d="M 570 395 V 414 H 460" class="line"/>
+  <path d="M 460 414 V 429" class="arrow"/>
+
+  <rect x="330" y="435" width="260" height="66" rx="8" class="output"/>
+  <text x="460" y="462" text-anchor="middle" class="label">Console report</text>
+  <text x="460" y="482" text-anchor="middle" class="body">result.html · result.txt · result.svg</text>
+
+  <line x1="590" y1="468" x2="654" y2="468" class="dashed"/>
+
+  <rect x="660" y="435" width="220" height="66" rx="8" class="output"/>
+  <text x="770" y="462" text-anchor="middle" class="label">Interactive analysis</text>
+  <text x="770" y="482" text-anchor="middle" class="body">Jupyter · WisIO Web</text>
+</svg>

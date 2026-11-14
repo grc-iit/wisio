@@ -1,0 +1,19 @@
+# Documentation build dependencies.
+#
+# These are deliberately independent of WisIO's runtime dependencies: the docs
+# build must not require a C++ toolchain, Apache Arrow, or the optional trace
+# readers. Everything documented here is written against the source tree, and
+# the Python API page is curated by hand rather than pulled in with autodoc.
+#
+# Read the Docs installs this file through .readthedocs.yaml. Keep the ranges
+# compatible with the Python version pinned there (3.12).
+sphinx>=8,<10
+sphinx-rtd-theme>=3.1,<4
+myst-parser>=5,<6
+
+# Markdown authoring conveniences.
+sphinx-copybutton>=0.5,<1
+sphinx-design>=0.6,<1
+
+# Diagrams are authored as Mermaid fences and rendered client-side.
+sphinxcontrib-mermaid>=2,<3
